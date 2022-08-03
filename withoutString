@@ -1,0 +1,20 @@
+
+public String withoutString(String base, String remove) {
+return base = base.replaceAll("(?i)" + remove, "");
+}
+
+/*
+public String withoutString(String base, String remove) {
+  int rmLen = remove.length();
+  StringBuilder sb = new StringBuilder();
+  int leftBound = 0;
+  int rmIndex = base.toLowerCase().indexOf(remove.toLowerCase());
+  while (rmIndex != -1){
+    sb.append(base.substring(leftBound, rmIndex));
+    leftBound = rmIndex + rmLen;
+    rmIndex = base.toLowerCase().indexOf(remove.toLowerCase(), leftBound);
+  }
+  sb.append(base.substring(leftBound));
+  return sb.toString();
+}
+*/
