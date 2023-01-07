@@ -1,8 +1,31 @@
+/*  8.25.22
+ *  https://codingbat.com/prob/p192570
+ */
 
 public String withoutString(String base, String remove) {
-return base = base.replaceAll("(?i)" + remove, "");
+  StringBuilder sb = new StringBuilder();
+  int rmLen = remove.length();
+  for (int i = 0; i < base.length(); ){
+    if (i + rmLen <= base.length() && 
+    base.substring(i, i+ rmLen).equalsIgnoreCase(remove)){
+      i = i + rmLen;
+    }else{
+      sb.append(base.charAt(i));
+      i++;
+      
+    }
+    
+    
+  }
+  return sb.toString();
 }
 
+/*
+public String withoutString(String base, String remove) {
+  return base.replaceAll("(?i)" + remove, "");
+  
+}
+*/
 /*
 public String withoutString(String base, String remove) {
   int rmLen = remove.length();

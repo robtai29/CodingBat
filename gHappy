@@ -1,0 +1,41 @@
+/*
+ *  https://codingbat.com/prob/p198664
+ */
+
+public boolean gHappy(String str) {
+  int len = str.length();
+
+  for (int i = 0; i < len; i++) {
+    if (str.charAt(i) == 'g') {
+        boolean preHappy = i-1 >= 0 && str.charAt(i-1) == 'g';
+        boolean postHappy = i+1 < len && str.charAt(i+1) == 'g';
+        if (!preHappy && !postHappy){
+          return false;
+        }
+        
+    }
+  }
+  
+  return true;
+  
+}
+
+
+/*
+public boolean gHappy(String str) {
+  int len = str.length();
+  boolean happy = true;
+
+  for (int i = 0; i < len; i++) {
+    if (str.charAt(i) == 'g') {
+      if (i > 0 && str.charAt(i-1) == 'g')
+        happy = true;
+      else if (i < len-1 && str.charAt(i+1) == 'g')
+        happy = true;
+      else
+        happy = false;
+    }
+  }
+  return happy;
+}
+*/
